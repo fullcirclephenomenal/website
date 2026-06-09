@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Circle Phenomenal — Live Limitless</title>
+  <meta name="description" content="The world's first whole-world touring team of yoga teachers and fire performers. Jesse & Catherine Hart — Live Limitless.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(212,98,42,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 20% 60%, rgba(61,184,160,0.06) 0%, transparent 60%),
+        linear-gradient(160deg, #0a0a0e 0%, #0c0e1a 50%, #0a0814 100%);
+    }
+    .hero__img-placeholder {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s 0.2s both;
+    }
+    .hero__eyebrow::before, .hero__eyebrow::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--teal);
+    }
+    .hero__title {
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 0.3em;
+      animation: fadeUp 0.8s 0.35s both;
+    }
+    .hero__title em {
+      font-style: italic;
+      color: var(--gold-light);
+      display: block;
+    }
+    .hero__sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 1.4vw, 1rem);
+      font-weight: 300;
+      color: var(--text-body);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.5s both;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.65s both;
+    }
+    .hero__scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      animation: fadeUp 1s 1.2s both;
+    }
+    .hero__scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(var(--gold), transparent);
+      animation: float 2s ease-in-out infinite;
+    }
+    .ticker {
+      background: var(--midnight);
+      border-top: 1px solid rgba(201,147,58,0.15);
+      border-bottom: 1px solid rgba(201,147,58,0.15);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+    .ticker__track {
+      display: flex;
+      gap: 3rem;
+      animation: tickerScroll 45s linear infinite;
+      width: max-content;
+    }
+    .ticker__item {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .ticker__item span { color: var(--gold); margin-right: 0.5rem; }
+    @keyframes tickerScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .pillars { padding: var(--section-pad) 0; }
+    .pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 3rem;
+    }
+    .pillar {
+      background: var(--dark-surface);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--transition);
+    }
+    .pillar::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .pillar:hover::after { transform: scaleX(1); }
+    .pillar:hover { background: #1d2035; }
+    .pillar__icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; animation: float 4s ease-in-out infinite; }
+    .pillar:nth-child(2) .pillar__icon { animation-delay: 1s; }
+    .pillar:nth-child(3) .pillar__icon { animation-delay: 2s; }
+    .pillar__title { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: 0.8rem; }
+    .pillar__text { font-size: 0.85rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1.5rem; }
+    .pillar__link { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .pillar__link:hover { color: var(--gold-pale); }
+    .about-preview { padding: var(--section-pad) 0; background: var(--deep-navy); }
+    .about-preview__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-preview__img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--midnight);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .about-preview__stat-row { display: flex; gap: 2.5rem; margin: 2rem 0; }
+    .stat__num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+    .stat__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.3rem; }
+    .map-belt { margin-top: 2rem; padding: 1.2rem 1.5rem; background: var(--card-bg); border-left: 3px solid var(--gold); font-size: 0.82rem; color: var(--text-body); font-family: var(--font-display); font-style: italic; }
+    .yt-preview { padding: var(--section-pad) 0; }
+    .yt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+    .yt-placeholder { position: relative; padding-bottom: 56.25%; background: var(--midnight); cursor: pointer; overflow: hidden; }
+    .yt-placeholder img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, opacity 0.4s; }
+    .yt-placeholder:hover img { transform: scale(1.03); opacity: 0.8; }
+    .yt-placeholder__play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; }
+    .yt-placeholder__play-btn { width: 56px; height: 56px; background: rgba(201,147,58,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+    .yt-placeholder:hover .yt-placeholder__play-btn { background: var(--gold-light); transform: scale(1.1); }
+    .yt-placeholder__play-btn::after { content: ''; display: block; width: 0; height: 0; border-style: solid; border-width: 9px 0 9px 16px; border-color: transparent transparent transparent var(--black); margin-left: 3px; }
+    .yt-placeholder__title { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); font-size: 0.8rem; font-weight: 600; color: var(--white); z-index: 2; }
+    .email-section { padding: var(--section-pad) 0; background: var(--dark-surface); position: relative; overflow: hidden; }
+    .email-section__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .email-section__perks { list-style: none; margin-top: 1rem; }
+    .email-section__perks li { font-size: 0.82rem; color: var(--text-body); padding: 0.4rem 0 0.4rem 1.4rem; position: relative; }
+    .email-section__perks li::before { content: '✦'; position: absolute; left: 0; color: var(--teal); font-size: 0.6rem; top: 0.5rem; }
+    .mailerlite-box { background: var(--card-bg); border: 1px dashed rgba(201,147,58,0.3); padding: 2.5rem; }
+    .mailerlite-box input[type="email"] { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--white); font-family: var(--font-body); font-size: 0.85rem; padding: 13px 16px; outline: none; margin-bottom: 0.8rem; }
+    .mailerlite-box input[type="email"]:focus { border-color: var(--gold); }
+    .mailerlite-box button { width: 100%; background: linear-gradient(135deg,var(--gold),var(--amber)); color: var(--black); border: none; padding: 14px; font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; }
+    .patreon-strip { padding: 5rem 0; background: linear-gradient(135deg, #0a0a0e 0%, #120c08 50%, #0a0a0e 100%); text-align: center; position: relative; overflow: hidden; }
+    .patreon-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(212,98,42,0.12) 0%, transparent 60%); pointer-events: none; }
+    @media (max-width: 900px) {
+      .pillars__grid { grid-template-columns: 1fr; }
+      .about-preview__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .yt-grid { grid-template-columns: 1fr; }
+      .email-section__inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__img-placeholder ember-zone"></div>
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__eyebrow">Unite The World First Hand</div>
+        <h1 class="hero__title">Live<br><em>Limitless.</em></h1>
+        <p class="hero__sub">The world's first whole-world touring team of yoga teachers and fire performers. Six years. Thirty countries. One family. One fire.</p>
+        <div class="hero__actions">
+          <a href="pages/about.html" class="btn btn--primary">Our Story</a>
+          <a href="pages/fire-arts.html" class="btn btn--outline">Fire Arts</a>
+          <a href="https://www.patreon.com/c/unitetheworldfirsthand" target="_blank" rel="noopener" class="btn btn--ghost">Support the Journey</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" id="ticker-track"></div>
+  </div>
+
+  <section class="pillars section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">What We Offer</span>
+        <h2>World-Class in Every Craft</h2>
+        <div class="divider"></div>
+        <p style="max-width:560px;margin:0 auto;color:var(--text-body);">Combining 12+ years of mastery in yoga, a decade of fire arts, and six years of continuous world travel — uniquely equipped to guide, inspire, and perform.</p>
+      </div>
+      <div class="pillars__grid">
+        <div class="pillar reveal">
+          <span class="pillar__icon">🔥</span>
+          <h3 class="pillar__title">Fire Arts</h3>
+          <p class="pillar__text">World-class fire and LED shows for festivals and special events globally. Workshops, private lessons, and 250+ free tutorials online.</p>
+          <a href="pages/fire-arts.html" class="pillar__link">Book a Show →</a>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar__icon">🧘</span>
+          <h3 class="pillar__title">Yoga &amp; Mentorship</h3>
+          <p class="pillar__text">Conscious Fitness, True Yoga, QiGong and 1:1 mentorship. 50+ free classes online. Holistic, nervous system-focused, dream-aligned.</p>
+          <a href="pages/yoga-mentorship.html" class="pillar__link">Book a Clarity Call →</a>
+        </div>
+        <div class="pillar reveal">
+          <span class="pillar__icon">🌍</span>
+          <h3 class="pillar__title">World Tour</h3>
+          <p class="pillar__text">Six years. 30+ countries across five continents. Destination guides, travel stories, and the behind-the-scenes of a family on the road.</p>
+          <a href="pages/blog-travel.html" class="pillar__link">Follow the Journey →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-preview">
+    <div class="container">
+      <div class="about-preview__inner">
+        <div class="reveal">
+          <div class="about-preview__img-placeholder">[ Jesse &amp; Catherine Photo ]</div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Our Story</span>
+          <h2>From Oregon to the World</h2>
+          <div class="divider" style="margin-left:0;"></div>
+          <p>We are Jesse and Catherine Hart — soul partners, performers, trainers, and nomadic visionaries. In 2019 we drove a camper truck out of Oregon and haven't stopped moving since.</p>
+          <p>Through Central and South America (where our daughter Prana was born in Ecuador), shipped to Africa, driven up through the continent, across the Middle East, and now in Eastern Europe — <em>30 countries and counting</em>.</p>
+          <p>We are the first ever whole-world touring team of yoga teachers and fire performers. This is not a trip. It's a life.</p>
+          <div class="about-preview__stat-row">
+            <div class="stat"><div class="stat__num">30<span style="color:var(--gold);font-size:1.5rem">+</span></div><div class="stat__label">Countries</div></div>
+            <div class="stat"><div class="stat__num">6<span style="color:var(--gold);font-size:1.5rem">+</span></div><div class="stat__label">Years On Road</div></div>
+            <div class="stat"><div class="stat__num">175<span style="color:var(--gold);font-size:1.5rem">+</span></div><div class="stat__label">Client Reviews</div></div>
+          </div>
+          <div class="map-belt">Oregon → Central America → Ecuador → Brazil → West Africa → East Africa → Middle East → Albania…</div>
+          <a href="pages/about.html" class="btn btn--outline" style="margin-top:2rem;">Read the Full Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="yt-preview section--dark section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Latest Videos</span>
+        <h2>Watch the Journey</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="yt-grid reveal">
+        <div class="yt-placeholder" data-ytid="2KdUiwWVeMk">
+          <img src="https://i.ytimg.com/vi/2KdUiwWVeMk/maxresdefault.jpg" alt="World Tour Video" loading="lazy">
+          <div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div>
+          <div class="yt-placeholder__title">We Drove Across the Middle East… Then This Happened</div>
+        </div>
+        <div class="yt-placeholder" data-ytid="KN6RSXjJTqY">
+          <img src="https://i.ytimg.com/vi/KN6RSXjJTqY/maxresdefault.jpg" alt="Fire Arts Performance" loading="lazy">
+          <div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div>
+          <div class="yt-placeholder__title">Pharaoh's Fire — Partner Poi at the Great Pyramids</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--outline">Visit Our YouTube Channel →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-section" id="newsletter">
+    <div class="container">
+      <div class="email-section__inner">
+        <div class="reveal">
+          <span class="eyebrow">Insider Circle</span>
+          <h2>Get Early Access</h2>
+          <div class="divider" style="margin-left:0;"></div>
+          <p>Receive our new blogs and YouTube videos before they go public. Behind-the-scenes from the road, free resources, and updates from every corner of the Earth.</p>
+          <ul class="email-section__perks">
+            <li>Early access to every new video &amp; blog post</li>
+            <li>Exclusive freebies and digital resources</li>
+            <li>Behind-the-scenes from 30+ countries</li>
+            <li>Discounts on workshops and courses</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <!-- REPLACE THIS BLOCK with your actual MailerLite embed code -->
+          <div class="mailerlite-box">
+            <p style="color:var(--text-muted);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;text-align:center;">[ MailerLite Embed — paste your form code here ]</p>
+            <input type="email" placeholder="Your email address...">
+            <button type="button">Join the Insider Circle</button>
+            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.8rem;text-align:center;">No spam. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="patreon-strip">
+    <div class="container container--narrow reveal">
+      <p style="font-size:2.5rem;margin-bottom:1rem;">🌍</p>
+      <h2>Unite The World First Hand</h2>
+      <div class="divider"></div>
+      <p>This journey runs on love, skill, and community. If our work has moved, inspired, or helped you — consider becoming a Patron and fueling the next chapter of the world tour.</p>
+      <a href="https://www.patreon.com/c/unitetheworldfirsthand" target="_blank" rel="noopener" class="btn btn--primary">Become a Patron ♥</a>
+    </div>
+  </section>
+
+  <div id="footer-inject"></div>
+  <script src="js/components.js"></script>
+  <script>
+    const countries = ['🇺🇸 USA','🇲🇽 Mexico','🇬🇹 Guatemala','🇭🇳 Honduras','🇳🇮 Nicaragua','🇨🇷 Costa Rica','🇵🇦 Panama','🇨🇴 Colombia','🇪🇨 Ecuador','🇵🇪 Peru','🇧🇷 Brazil','🇬🇭 Ghana','🇸🇳 Senegal','🇲🇦 Morocco','🇪🇬 Egypt','🇯🇴 Jordan','🇸🇦 Saudi Arabia','🇴🇲 Oman','🇦🇪 UAE','🇹🇷 Turkey','🇬🇷 Greece','🇦🇱 Albania'];
+    const track = document.getElementById('ticker-track');
+    [...countries,...countries].forEach(c => {
+      const item = document.createElement('div');
+      item.className = 'ticker__item';
+      item.innerHTML = '<span>✦</span>' + c;
+      track.appendChild(item);
+    });
+  </script>
+</body>
+</html>
