@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Early Access — Full Circle Phenomenal</title>
+  <meta name="description" content="Join the Insider Circle. Get blogs and YouTube videos before public release, behind-the-scenes updates from the road, and exclusive freebies.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .ea-hero { min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--black);position:relative;overflow:hidden;padding-top:var(--nav-height); }
+    .ea-hero__bg { position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(61,184,160,0.08) 0%,transparent 55%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(201,147,58,0.07) 0%,transparent 50%),linear-gradient(160deg,#0a0a0e,#0c111a); }
+    .ea-inner { position:relative;z-index:2;text-align:center;max-width:680px;margin:0 auto; }
+    .ea-inner h1 { font-size:clamp(2.5rem,6vw,5rem);animation:fadeUp 0.8s 0.2s both; }
+    .ea-inner p { animation:fadeUp 0.8s 0.4s both;font-size:1rem;line-height:1.8; }
+    .perks-row { display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin:2.5rem 0;animation:fadeUp 0.8s 0.5s both; }
+    .perk { text-align:center;flex:1;min-width:120px; }
+    .perk__icon { font-size:1.6rem;display:block;margin-bottom:0.4rem; }
+    .perk__label { font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted); }
+    .mailerlite-placeholder { background:var(--card-bg);border:1px dashed rgba(201,147,58,0.3);padding:2.5rem;margin-top:2rem;animation:fadeUp 0.8s 0.6s both; }
+    .mailerlite-placeholder input { width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:var(--white);font-family:var(--font-body);font-size:0.9rem;padding:14px 16px;margin-bottom:0.8rem;outline:none;transition:border-color var(--transition); }
+    .mailerlite-placeholder input:focus { border-color:var(--teal); }
+    .mailerlite-placeholder button { width:100%;background:linear-gradient(135deg,var(--teal-dark),var(--teal));color:var(--white);border:none;padding:15px;font-family:var(--font-body);font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:opacity var(--transition); }
+    .mailerlite-placeholder button:hover { opacity:0.9; }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="ea-hero">
+    <div class="ea-hero__bg ember-zone"></div>
+    <div class="container">
+      <div class="ea-inner">
+        <span class="eyebrow">Insider Circle</span>
+        <h1>Be the <em style="color:var(--teal);">First</em> to Know.</h1>
+        <div class="divider"></div>
+        <p>Get our new YouTube videos and blog posts before they go public. Behind-the-scenes from the road, special freebies, exclusive updates from every corner of the Earth. Join thousands of people following the journey.</p>
+        <div class="perks-row">
+          <div class="perk"><span class="perk__icon">🎬</span><span class="perk__label">Early Video Access</span></div>
+          <div class="perk"><span class="perk__icon">📝</span><span class="perk__label">Blogs First</span></div>
+          <div class="perk"><span class="perk__icon">🎁</span><span class="perk__label">Free Resources</span></div>
+          <div class="perk"><span class="perk__icon">🌍</span><span class="perk__label">Road Updates</span></div>
+          <div class="perk"><span class="perk__icon">🔥</span><span class="perk__label">Behind the Scenes</span></div>
+        </div>
+
+        <!-- REPLACE THIS BLOCK with your actual MailerLite embed code -->
+        <div class="mailerlite-placeholder">
+          <p style="color:var(--text-muted);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;">[ Paste your MailerLite embed code here ]</p>
+          <input type="text" placeholder="Your first name (optional)">
+          <input type="email" placeholder="Your email address...">
+          <button type="button">Join the Insider Circle — It's Free</button>
+          <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.8rem;">No spam. Real updates. Unsubscribe anytime. ♥</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

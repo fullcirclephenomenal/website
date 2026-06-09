@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Blog — Full Circle Phenomenal</title>
+  <meta name="description" content="Real travel stories from the world's first whole-world touring fire and yoga family. Destination guides, overlanding tips, and nomad life.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .blog-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem; }
+    .blog-card { background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);overflow:hidden;transition:all var(--transition);display:block;text-decoration:none;color:inherit; }
+    .blog-card:hover { transform:translateY(-4px);border-color:rgba(201,147,58,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.4); }
+    .blog-card__img { width:100%;aspect-ratio:16/10;object-fit:cover;display:block;transition:transform 0.4s; }
+    .blog-card:hover .blog-card__img { transform:scale(1.03); }
+    .blog-card__img-ph { width:100%;aspect-ratio:16/10;background:var(--midnight);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase; }
+    .blog-card__body { padding:1.8rem; }
+    .blog-card__tag { font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem; }
+    .blog-card__title { font-family:var(--font-display);font-size:1.25rem;color:var(--white);margin-bottom:0.5rem;line-height:1.3; }
+    .blog-card__date { font-size:0.7rem;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:0.8rem; }
+    .blog-card__excerpt { font-size:0.84rem;color:var(--text-body);line-height:1.65; }
+    .blog-card__read { display:inline-block;margin-top:1rem;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold); }
+    .yt-row { display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem; }
+    .yt-placeholder { position:relative;padding-bottom:56.25%;background:var(--midnight);cursor:pointer;overflow:hidden; }
+    .yt-placeholder img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.4s,opacity 0.4s; }
+    .yt-placeholder:hover img { transform:scale(1.03);opacity:0.8; }
+    .yt-placeholder__play { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2; }
+    .yt-placeholder__play-btn { width:48px;height:48px;background:rgba(201,147,58,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s; }
+    .yt-placeholder:hover .yt-placeholder__play-btn { background:var(--gold-light);transform:scale(1.1); }
+    .yt-placeholder__play-btn::after { content:'';display:block;width:0;height:0;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent var(--black);margin-left:2px; }
+    .yt-placeholder__title { position:absolute;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(transparent,rgba(0,0,0,0.85));font-size:0.78rem;font-weight:600;color:var(--white);z-index:2; }
+    @media(max-width:900px) { .blog-grid { grid-template-columns:1fr 1fr; } .yt-row { grid-template-columns:1fr; } }
+    @media(max-width:600px) { .blog-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Blog · Travel</span>
+      <h1>Discover the World <em style="color:var(--gold-light);">With Us.</em></h1>
+      <p>Real stories from the road. No filters. No sponsored fluff. Just what it's actually like to drive the world with a family, a fire kit, and a yoga mat.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Latest Posts</span>
+        <h2>From the Road</h2>
+        <div class="divider" style="margin-left:0;"></div>
+      </div>
+      <div class="blog-grid">
+
+        <!-- POST 1 — replace images + links with your real posts -->
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__img-ph">[ Athens Greece Photo ]</div>
+          <div class="blog-card__body">
+            <div class="blog-card__tag">🇬🇷 Greece</div>
+            <div class="blog-card__title">Winter Travel in Athens — A Nomad Nightmare</div>
+            <div class="blog-card__date">February 26, 2026</div>
+            <div class="blog-card__excerpt">This is the side of long-term travel most influencers may never show. Winter travel in Athens tested everything we had...</div>
+            <span class="blog-card__read">Read More →</span>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__img-ph">[ Egypt Border Photo ]</div>
+          <div class="blog-card__body">
+            <div class="blog-card__tag">🇪🇬 Egypt</div>
+            <div class="blog-card__title">Crossing a Vehicle into Egypt — Guide to Avoid the Nightmare</div>
+            <div class="blog-card__date">September 6, 2025</div>
+            <div class="blog-card__excerpt">We didn't have to do Egypt… but of course we did! Egypt is undeniably a bucket-list destination, and getting there with a vehicle is a whole story...</div>
+            <span class="blog-card__read">Read More →</span>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__img-ph">[ Book / Road Photo ]</div>
+          <div class="blog-card__body">
+            <div class="blog-card__tag">📖 Resources</div>
+            <div class="blog-card__title">I Wrote the Book I Wish I Had Before We Hit the Road</div>
+            <div class="blog-card__date">July 19, 2025</div>
+            <div class="blog-card__excerpt">It started as a bold decision to build a life on the road… and a lot of questions we didn't have answers to. So we wrote the answers down.</div>
+            <span class="blog-card__read">Read More →</span>
+          </div>
+        </a>
+
+        <!-- PLACEHOLDER CARDS — replace with new posts as you write them -->
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__img-ph">[ Your Next Post Photo ]</div>
+          <div class="blog-card__body">
+            <div class="blog-card__tag">✦ Coming Soon</div>
+            <div class="blog-card__title">Your Next Travel Story Goes Here</div>
+            <div class="blog-card__date">2026</div>
+            <div class="blog-card__excerpt">Replace this card with your next blog post. Add your photo, title, date, and excerpt — the format is simple and copy-paste ready.</div>
+            <span class="blog-card__read">Read More →</span>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__img-ph">[ Your Next Post Photo ]</div>
+          <div class="blog-card__body">
+            <div class="blog-card__tag">✦ Coming Soon</div>
+            <div class="blog-card__title">Another Story Waiting to Be Written</div>
+            <div class="blog-card__date">2026</div>
+            <div class="blog-card__excerpt">Each journey you take becomes a guide for someone else who needs it. Your stories matter. Add them here.</div>
+            <span class="blog-card__read">Read More →</span>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__img-ph">[ Your Next Post Photo ]</div>
+          <div class="blog-card__body">
+            <div class="blog-card__tag">✦ Coming Soon</div>
+            <div class="blog-card__title">The World Is Full of Stories</div>
+            <div class="blog-card__date">2026</div>
+            <div class="blog-card__excerpt">30+ countries, 6+ years — there are so many stories still to tell. This space is ready for them.</div>
+            <span class="blog-card__read">Read More →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Watch the Journey</span>
+        <h2>World Tour Videos</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="yt-row reveal">
+        <div class="yt-placeholder" data-ytid="2KdUiwWVeMk"><img src="https://i.ytimg.com/vi/2KdUiwWVeMk/maxresdefault.jpg" alt="Middle East world tour" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">We Drove Across the Middle East… Then This Happened</div></div>
+        <div class="yt-placeholder" data-ytid="2KdUiwWVeMk"><img src="https://i.ytimg.com/vi/2KdUiwWVeMk/maxresdefault.jpg" alt="Albania world tour" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Overlanding from America to Albania: 6-Year Update</div></div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--outline">70+ Travel Videos on YouTube →</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

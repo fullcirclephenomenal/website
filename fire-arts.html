@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Arts — Full Circle Phenomenal</title>
+  <meta name="description" content="World-class fire and LED shows, workshops, and 250+ free tutorials. Book Full Circle Phenomenal for your event or festival.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .fire-hero { position:relative;min-height:80vh;display:flex;align-items:center;background:var(--black);overflow:hidden;padding-top:var(--nav-height); }
+    .fire-hero__bg { position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 60%, rgba(232,73,29,0.2) 0%, rgba(212,98,42,0.1) 30%, transparent 60%), radial-gradient(ellipse 40% 40% at 80% 20%, rgba(201,147,58,0.1) 0%, transparent 50%), linear-gradient(180deg,#0a0a0e,#120808); }
+    .fire-hero__ember { position:absolute;inset:0;pointer-events:none; }
+    .fire-hero__content { position:relative;z-index:2;text-align:center;width:100%; }
+    .fire-hero__content h1 { animation:fadeUp 0.8s 0.2s both; }
+    .fire-hero__content p { animation:fadeUp 0.8s 0.4s both;max-width:600px;margin:0 auto 2rem;font-size:1.05rem; }
+    .fire-hero__content .hero__actions { animation:fadeUp 0.8s 0.6s both;justify-content:center; }
+    .services-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem; }
+    .service-card { background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);padding:2.5rem;position:relative;overflow:hidden;transition:all var(--transition); }
+    .service-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--fire),var(--gold),var(--amber));transform:scaleX(0);transform-origin:left;transition:transform var(--transition); }
+    .service-card:hover::before { transform:scaleX(1); }
+    .service-card:hover { border-color:rgba(201,147,58,0.25);transform:translateY(-4px); }
+    .service-card__icon { font-size:2.2rem;margin-bottom:1rem;display:block; }
+    .service-card h3 { font-size:1.3rem;margin-bottom:0.6rem; }
+    .booking-section { padding:var(--section-pad) 0;background:var(--deep-navy); }
+    .booking-inner { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start; }
+    .booking-form-wrap { background:var(--card-bg);border:1px solid rgba(201,147,58,0.15);padding:2.5rem; }
+    .tutorials-section { padding:var(--section-pad) 0;background:var(--dark-surface); }
+    .tutorials-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem; }
+    .yt-placeholder { position:relative;padding-bottom:56.25%;background:var(--midnight);cursor:pointer;overflow:hidden; }
+    .yt-placeholder img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.4s,opacity 0.4s; }
+    .yt-placeholder:hover img { transform:scale(1.03);opacity:0.8; }
+    .yt-placeholder__play { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2; }
+    .yt-placeholder__play-btn { width:44px;height:44px;background:rgba(232,73,29,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s; }
+    .yt-placeholder:hover .yt-placeholder__play-btn { background:var(--fire);transform:scale(1.1); }
+    .yt-placeholder__play-btn::after { content:'';display:block;width:0;height:0;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent var(--white);margin-left:2px; }
+    .yt-placeholder__title { position:absolute;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(transparent,rgba(0,0,0,0.85));font-size:0.75rem;font-weight:600;color:var(--white);z-index:2; }
+    .partner-strip { padding:4rem 0;background:var(--black);text-align:center;border-top:1px solid rgba(255,255,255,0.05); }
+    @media(max-width:900px) {
+      .services-grid { grid-template-columns:1fr; }
+      .booking-inner { grid-template-columns:1fr; gap:3rem; }
+      .tutorials-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:600px) { .tutorials-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="fire-hero">
+    <div class="fire-hero__bg"></div>
+    <div class="fire-hero__ember ember-zone"></div>
+    <div class="container">
+      <div class="fire-hero__content">
+        <span class="eyebrow" style="display:inline-flex;gap:1rem;align-items:center;">
+          <span style="width:30px;height:1px;background:var(--teal);display:block;"></span>
+          Fire Arts &amp; Flow
+          <span style="width:30px;height:1px;background:var(--teal);display:block;"></span>
+        </span>
+        <h1 style="font-size:clamp(3rem,7vw,6rem);margin:0.5rem 0;">We Bring the <em style="color:var(--gold-light);font-style:italic;">Fire</em></h1>
+        <p>World-class fire and LED shows for festivals, weddings, corporate events, and private experiences. 250+ free tutorials online. Workshops and private lessons globally.</p>
+        <div class="hero__actions">
+          <a href="#book" class="btn btn--primary">Inquire About Booking</a>
+          <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--outline">Watch 250+ Tutorials →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--dark-surface);">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Services</span>
+        <h2>What We Offer</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-card__icon">🔥</span>
+          <h3>Fire Shows</h3>
+          <p>Full professional fire performances featuring poi, staff, fans, snakes, hoops, and partner flow. Choreographed shows tailored to your event's theme, atmosphere, and audience.</p>
+          <p style="color:var(--text-muted);font-size:0.82rem;">Ideal for festivals, cultural events, weddings, galas, and private gatherings worldwide.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-card__icon">💡</span>
+          <h3>LED &amp; Light Shows</h3>
+          <p>Fire-free LED flow arts for indoor events, venues with fire restrictions, or mixed LED/fire experiences. Visually stunning, safe, and endlessly creative.</p>
+          <p style="color:var(--text-muted);font-size:0.82rem;">Perfect for corporate events, indoor venues, and family-friendly festivals.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-card__icon">🎯</span>
+          <h3>Workshops &amp; Lessons</h3>
+          <p>Group workshops and private lessons for beginners through advanced. Poi, staff, silk veils, hoop, contact ball, and more. We meet you where you are and take you further.</p>
+          <p style="color:var(--text-muted);font-size:0.82rem;">Private instruction or group experiences — in person or online.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-card__icon">🎭</span>
+          <h3>Cultural &amp; Themed Shows</h3>
+          <p>We create themed performances that honor the culture and spirit of wherever we are — from Egyptian mythology to African rhythm to Arabian nights. Art that belongs to its context.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-card__icon">🎬</span>
+          <h3>Silk Veil &amp; Flow Arts</h3>
+          <p>Ethereal silk veil performance, belly dance fusion, and elegant flow arts — adding beauty, grace, and storytelling to any performance.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-card__icon">📱</span>
+          <h3>250+ Free Tutorials</h3>
+          <p>Whether you're learning your first spin or refining advanced technique, our YouTube channel has over 250 free lessons to grow your flow arts practice from anywhere in the world.</p>
+          <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="pillar__link" style="display:inline-block;margin-top:0.8rem;font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Browse Tutorials →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tutorials-section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Watch</span>
+        <h2>Fire in Action</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tutorials-grid reveal">
+        <div class="yt-placeholder" data-ytid="KN6RSXjJTqY"><img src="https://i.ytimg.com/vi/KN6RSXjJTqY/maxresdefault.jpg" alt="Fire show" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Pharaoh's Fire — Great Pyramids</div></div>
+        <div class="yt-placeholder" data-ytid="KN6RSXjJTqY"><img src="https://i.ytimg.com/vi/KN6RSXjJTqY/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Fire Spinning Performance</div></div>
+        <div class="yt-placeholder" data-ytid="KN6RSXjJTqY"><img src="https://i.ytimg.com/vi/KN6RSXjJTqY/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Flow Arts Introduction</div></div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--outline">View All 250+ Videos →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-section" id="book">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Book Us</span>
+        <h2>Bring Fire to Your Event</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="booking-inner" style="margin-top:3rem;">
+        <div class="reveal">
+          <h3 style="font-family:var(--font-display);margin-bottom:1rem;">Let's Create Something Unforgettable</h3>
+          <p>We perform worldwide — wherever you are, we'll find a way to make it happen. From intimate private events to large festivals, we bring professionalism, artistry, and the energy of six continents to every stage.</p>
+          <p>Fill in the form with as many details as you have. We'll respond within 48 hours.</p>
+          <div style="margin-top:2rem;padding:1.5rem;background:var(--card-bg);border-left:3px solid var(--gold);">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin:0;"><strong style="color:var(--gold-light);">Partner Channel</strong><br>For fire tutorials and flow arts education, visit our partner YouTube channel with 16,000+ subscribers.</p>
+            <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--teal);display:inline-block;margin-top:0.6rem;">Visit Channel →</a>
+          </div>
+          <div style="margin-top:1.5rem;padding:1.5rem;background:var(--card-bg);border-left:3px solid var(--teal);">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin:0;"><strong style="color:var(--gold-light);">Based Worldwide</strong><br>We are constantly moving. Tell us where and when — we'll tell you if we can be there.</p>
+          </div>
+        </div>
+        <div class="booking-form-wrap reveal">
+          <h4 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1.5rem;">Booking Inquiry</h4>
+          <!-- Replace with Formspree, Netlify Forms, or your preferred form handler -->
+          <form action="#" method="POST" onsubmit="handleBookingSubmit(event)">
+            <div class="form-group"><label for="b-name">Full Name</label><input type="text" id="b-name" name="name" placeholder="Your name" required></div>
+            <div class="form-group"><label for="b-email">Email Address</label><input type="email" id="b-email" name="email" placeholder="your@email.com" required></div>
+            <div class="form-group"><label for="b-event">Event Type</label>
+              <select id="b-event" name="event_type">
+                <option value="">Select event type...</option>
+                <option>Festival or Concert</option>
+                <option>Wedding or Private Party</option>
+                <option>Corporate Event</option>
+                <option>Cultural or Community Event</option>
+                <option>Workshop / Private Lesson</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="b-date">Event Date</label><input type="date" id="b-date" name="event_date"></div>
+            <div class="form-group"><label for="b-location">Event Location</label><input type="text" id="b-location" name="location" placeholder="City, Country"></div>
+            <div class="form-group"><label for="b-msg">Tell Us More</label><textarea id="b-msg" name="message" placeholder="Any details about your event, vision, budget, or questions..."></textarea></div>
+            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Send Inquiry</button>
+          </form>
+          <div id="booking-thanks" style="display:none;text-align:center;padding:2rem;color:var(--gold-light);font-family:var(--font-display);font-size:1.2rem;font-style:italic;">Thank you! We'll be in touch within 48 hours. ✨</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="partner-strip">
+    <div class="container container--narrow">
+      <span class="eyebrow" style="display:block;text-align:center;margin-bottom:1rem;">Fire Arts Education</span>
+      <h3 style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--white);margin-bottom:0.8rem;">250+ Free Tutorials Online</h3>
+      <p style="color:var(--text-body);max-width:500px;margin:0 auto 1.5rem;">Begin your flow arts journey or level up your existing practice. Poi, staff, hoops, silk veils, and more — all free, all on YouTube.</p>
+      <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--primary">Start Learning Free →</a>
+    </div>
+  </div>
+
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+  <script>
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      document.querySelector('.booking-form-wrap form').style.display = 'none';
+      document.getElementById('booking-thanks').style.display = 'block';
+      // TODO: wire to Formspree / Netlify Forms / EmailJS
+    }
+  </script>
+</body>
+</html>

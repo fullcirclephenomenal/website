@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga &amp; Mentorship — Full Circle Phenomenal</title>
+  <meta name="description" content="Private mentorship with Jesse Hart. Conscious Fitness, True Yoga, manifestation, and dream life design. Book a free clarity call.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .yoga-hero { position:relative;min-height:75vh;display:flex;align-items:center;background:var(--black);overflow:hidden;padding-top:var(--nav-height); }
+    .yoga-hero__bg { position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 30% 50%, rgba(61,184,160,0.1) 0%, transparent 55%), radial-gradient(ellipse 50% 60% at 80% 30%, rgba(201,147,58,0.08) 0%, transparent 50%), linear-gradient(160deg,#0a0a0e,#0c111a); }
+    .yoga-hero__content { position:relative;z-index:2;max-width:700px; }
+    .benefits-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem; }
+    .benefit-card { padding:2rem;background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);border-top:3px solid var(--teal);transition:all var(--transition); }
+    .benefit-card:hover { border-top-color:var(--gold);transform:translateY(-3px); }
+    .benefit-card__icon { font-size:1.8rem;margin-bottom:0.8rem; }
+    .benefit-card h4 { font-size:1.1rem;margin-bottom:0.5rem; }
+    .offerings-grid { display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start; }
+    .offering-box { background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);padding:2.5rem;position:relative;overflow:hidden; }
+    .offering-box::after { content:'';position:absolute;top:0;left:0;right:0;height:3px; }
+    .offering-box--yoga::after { background:linear-gradient(90deg,var(--teal),transparent); }
+    .offering-box--mentor::after { background:linear-gradient(90deg,var(--gold),transparent); }
+    .testimonials-section { padding:var(--section-pad) 0;background:var(--dark-surface); }
+    .testi-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem; }
+    .testi-card { background:var(--card-bg);border:1px solid rgba(201,147,58,0.12);padding:2rem;position:relative; }
+    .testi-card::before { content:'"';position:absolute;top:0.3rem;left:1rem;font-family:var(--font-display);font-size:4rem;color:var(--gold);opacity:0.2;line-height:1; }
+    .testi-card__text { font-family:var(--font-display);font-style:italic;font-size:0.95rem;line-height:1.8;color:var(--text-body);margin-bottom:1rem; }
+    .testi-card__name { font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light); }
+    .testi-card__role { font-size:0.72rem;color:var(--text-muted); }
+    .cta-banner { padding:var(--section-pad) 0;background:linear-gradient(135deg,#0a0c14,#0c0e1a);text-align:center;position:relative;overflow:hidden; }
+    .cta-banner::before { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(61,184,160,0.08) 0%,transparent 60%); }
+    .calendar-embed { background:var(--card-bg);border:1px dashed rgba(201,147,58,0.3);padding:3rem;text-align:center;margin-top:2rem; }
+    @media(max-width:900px) {
+      .benefits-grid { grid-template-columns:1fr 1fr; }
+      .offerings-grid { grid-template-columns:1fr; }
+      .testi-grid { grid-template-columns:1fr; }
+    }
+    @media(max-width:600px) { .benefits-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="yoga-hero">
+    <div class="yoga-hero__bg"></div>
+    <div class="container">
+      <div class="yoga-hero__content">
+        <span class="eyebrow">Yoga &amp; Mentorship</span>
+        <h1 style="animation:fadeUp 0.8s 0.2s both;">Create the Strongest, Healthiest, Most <em style="color:var(--teal);">Aligned</em> Version of Yourself.</h1>
+        <p style="animation:fadeUp 0.8s 0.4s both;font-size:1.05rem;line-height:1.8;margin-bottom:2rem;">Private mentorship with Jesse Hart — integrating Conscious Fitness, True Yoga, manifestation, transmutation, and dream life design. 13+ years of teaching. 175+ five-star reviews.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s 0.6s both;">
+          <a href="https://calendly.com/full-circle-phenomenal/30min" target="_blank" rel="noopener" class="btn btn--teal">Book Free Clarity Call</a>
+          <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--outline">50+ Free Yoga Classes</a>
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem;animation:fadeUp 0.8s 0.8s both;">★ Limited number of private clients accepted at any time</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--deep-navy);">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Transformation Areas</span>
+        <h2>What Changes When You Do This Work</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal"><div class="benefit-card__icon">💪</div><h4>Physical Strength &amp; Vitality</h4><p>A stronger, more resilient body capable of supporting the life you love to live — built for longevity, not just looks.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-card__icon">🧭</div><h4>Clarity of Direction</h4><p>Move forward with confidence and purpose. No more scattered uncertainty — you understand what to do and when to do it.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-card__icon">🔥</div><h4>Disciplined Living</h4><p>Daily routines become supportive rather than restrictive, creating powerful momentum in every area of life.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-card__icon">💗</div><h4>Emotional Transmutation</h4><p>Past experiences become sources of strength and wisdom. You stop being defined by what happened and start being shaped by what you choose.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-card__icon">🌍</div><h4>Freedom Lifestyle Design</h4><p>Health, work, travel, and growth begin to support each other rather than compete. Design a life that actually reflects your values.</p></div>
+        <div class="benefit-card reveal"><div class="benefit-card__icon">✨</div><h4>Manifestation That Works</h4><p>Practical methods drawn from Neville Goddard, Abraham Hicks, and real-world application — not wishful thinking but conscious creation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Yoga, Training &amp; Mentorship</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="offerings-grid" style="margin-top:3rem;">
+        <div class="offering-box offering-box--yoga reveal">
+          <span class="eyebrow" style="color:var(--teal);">Free Resource</span>
+          <h3>Yoga, QiGong &amp; Meditation</h3>
+          <p>As 12+ years experienced yoga teachers, we guide practices that awaken the body, center the mind, and harmonize vibration. True Yoga is not just about rolling out the mat and holding poses — it's a physical and non-physical investment that harmonizes the nervous system.</p>
+          <p>Our YouTube channel has <strong>50+ free online classes</strong> — from beginners seated yoga to advanced practice, filmed everywhere from the Great Pyramids of Egypt to the jungles of South America.</p>
+          <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--teal" style="margin-top:1rem;">Access 50+ Free Classes</a>
+        </div>
+        <div class="offering-box offering-box--mentor reveal">
+          <span class="eyebrow" style="color:var(--gold);">Private Mentorship</span>
+          <h3>1:1 with Jesse Hart</h3>
+          <p>Each mentorship journey is unique and tailored to the individual. Core areas we explore depending on your goals: Conscious Fitness, True Yoga Integration, Mindset &amp; Manifestation, Transmutation of Past Experiences, Dream Life Cultivation, and Freedom-Based Lifestyle Design.</p>
+          <p>Jesse works with a <strong>select number of private clients</strong> at any given time. The clarity call is the first step in exploring whether this path feels aligned for you.</p>
+          <ul style="list-style:none;margin:1rem 0;font-size:0.85rem;color:var(--text-body);">
+            <li style="padding:0.3rem 0;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">→</span> Free 20–30 min clarity call to start</li>
+            <li style="padding:0.3rem 0;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">→</span> Online (Google Meet) — available worldwide</li>
+            <li style="padding:0.3rem 0;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">→</span> Limited availability — selective intake</li>
+          </ul>
+          <!-- Calendly embed placeholder -->
+          <a href="https://calendly.com/full-circle-phenomenal/30min" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top:0.5rem;">Book Free Clarity Call</a>
+          <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.8rem;">No obligation. Purpose of this call is clarity — not commitment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Client Experiences</span>
+        <h2>What People Say</h2>
+        <div class="divider"></div>
+        <p style="max-width:600px;margin:0 auto;color:var(--text-muted);">175+ five-star reviews on Google Business. A few words from a handful of the people Jesse has worked with.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <p class="testi-card__text">We worked on professional business skills, street smarts, travel training as well as deep personal transformation. I left the country for the first time to Costa Rica, expanded my Flow Arts skills, learned to fire dance, performed professionally... I love my life.</p>
+          <div class="testi-card__name">Serine Figueroa</div>
+          <div class="testi-card__role">Traveling Entrepreneur, USA</div>
+        </div>
+        <div class="testi-card reveal">
+          <p class="testi-card__text">I'm 69, and in my 4th year practicing with Jesse. I have much more flexibility, ease and range of motion. Old friends and new respond with surprise at my appearance and capabilities. "You seem more like 35 or 40." I'm more supple than in my 30s.</p>
+          <div class="testi-card__name">Joanne Ellis</div>
+          <div class="testi-card__role">Retired, USA</div>
+        </div>
+        <div class="testi-card reveal">
+          <p class="testi-card__text">Through their guidance I have come full circle and beyond, living each day with greater excitement and vigor. Dreams and desires that felt 'impossible' a couple of months ago have been completely reframed as manageable pressures.</p>
+          <div class="testi-card__name">Roxanne de Freitas</div>
+          <div class="testi-card__role">Traveling Entrepreneur, South Africa</div>
+        </div>
+        <div class="testi-card reveal">
+          <p class="testi-card__text">I felt a significant difference after only a couple of classes — not only physically but especially mentally. Jesse's classes are focused on simplicity, breathing, mindfulness, precise execution. I felt so great and energised after each class.</p>
+          <div class="testi-card__name">Veronika Adriana Pokorná</div>
+          <div class="testi-card__role">Travel Influencer, Oman &amp; Czech Republic</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="https://g.co/kgs/9kdf1k" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--teal);">Read 175+ Reviews on Google →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container container--narrow reveal" style="position:relative;z-index:2;">
+      <span class="eyebrow" style="display:block;text-align:center;margin-bottom:1rem;">First Step</span>
+      <h2>Start With a Free Clarity Call</h2>
+      <div class="divider"></div>
+      <p>A simple 20–30 minute conversation to explore where you are, what you're working toward, and whether this path feels aligned. No expectations. No obligations. Just clarity.</p>
+      <!-- Calendly embed block — replace with your Calendly inline embed code -->
+      <div class="calendar-embed">
+        <p style="color:var(--text-muted);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;">[ Calendly Inline Embed — paste your booking widget code here ]</p>
+        <a href="https://calendly.com/full-circle-phenomenal/30min" target="_blank" rel="noopener" class="btn btn--primary" style="font-size:0.85rem;padding:16px 40px;">Book Free Clarity Call with Jesse →</a>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-top:1rem;">Duration: 20–30 min · Online (Google Meet) · Free</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

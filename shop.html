@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Full Circle Phenomenal</title>
+  <meta name="description" content="Books, ebooks, and courses by Jesse & Catherine Hart. Design your dream job and start traveling.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .shop-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem; }
+    .product-card { background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);overflow:hidden;transition:all var(--transition);display:flex;flex-direction:column; }
+    .product-card:hover { transform:translateY(-4px);border-color:rgba(201,147,58,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.4); }
+    .product-card__img { width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--midnight); }
+    .product-card__img-ph { width:100%;aspect-ratio:1;background:var(--midnight);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase; }
+    .product-card__body { padding:1.8rem;flex:1;display:flex;flex-direction:column; }
+    .product-card__tag { font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem; }
+    .product-card__title { font-family:var(--font-display);font-size:1.2rem;color:var(--white);margin-bottom:0.5rem;line-height:1.3; }
+    .product-card__price { font-size:1.4rem;font-weight:600;color:var(--gold-light);margin-bottom:0.8rem; }
+    .product-card__desc { font-size:0.84rem;color:var(--text-body);line-height:1.65;flex:1;margin-bottom:1.2rem; }
+    .product-card__badge { display:inline-block;background:rgba(201,147,58,0.12);border:1px solid rgba(201,147,58,0.25);color:var(--gold);font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:3px 8px;margin-bottom:0.8rem; }
+    .coming-soon { opacity:0.6; }
+    .coming-soon .product-card__img-ph { filter:grayscale(0.5); }
+    @media(max-width:900px) { .shop-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:600px) { .shop-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Shop</span>
+      <h1>Tools to <em style="color:var(--gold-light);">Live Limitless.</em></h1>
+      <p>Books, ebooks, and courses written from the road — real tools from real experience. No fluff. No theory. Just what actually works.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Books &amp; Ebooks</span>
+        <h2>Start Here</h2>
+        <div class="divider" style="margin-left:0;"></div>
+      </div>
+      <div class="shop-grid">
+
+        <!-- PRODUCT 1: Physical Workbook → Bookvault -->
+        <div class="product-card reveal">
+          <img class="product-card__img" src="https://full-circle-phenomenal.com/wp-content/uploads/2024/11/IMG_4564-e1754667621449-300x300.jpg" alt="Complete Guide Physical Workbook" loading="lazy">
+          <div class="product-card__body">
+            <div class="product-card__tag">📗 Physical Book</div>
+            <div class="product-card__badge">Print on Demand · Ships Worldwide</div>
+            <h3 class="product-card__title">Complete Guide to Design Your Dream Job &amp; START TRAVELING!</h3>
+            <div class="product-card__price">$39.99 <span style="font-size:0.75rem;color:var(--text-muted);font-weight:400;">USD</span></div>
+            <p class="product-card__desc">132-page physical workbook — a step-by-step guide to discovering your dream job, designing it, and starting to travel with it. Journaling prompts, business guides, travel strategy. Written entirely from personal experience across 30+ countries. No AI. All real.</p>
+            <!-- Replace BOOKVAULT_URL with your actual Bookvault product link -->
+            <a href="BOOKVAULT_URL" target="_blank" rel="noopener" class="btn btn--primary" style="justify-content:center;text-align:center;">Order Physical Book →</a>
+          </div>
+        </div>
+
+        <!-- PRODUCT 2: Ebook → Gumroad -->
+        <div class="product-card reveal">
+          <img class="product-card__img" src="https://full-circle-phenomenal.com/wp-content/uploads/2025/08/photo-output-5-300x300.jpeg" alt="Ebook and Worksheet Bundle" loading="lazy">
+          <div class="product-card__body">
+            <div class="product-card__tag">📱 Ebook + Worksheets</div>
+            <div class="product-card__badge">Instant Digital Download</div>
+            <h3 class="product-card__title">E-Book &amp; Worksheet Bundle</h3>
+            <div class="product-card__price">$14.99 <span style="font-size:0.75rem;color:var(--text-muted);font-weight:400;">USD</span></div>
+            <p class="product-card__desc">The digital version of the complete guide — instantly downloadable. Includes all worksheets in fillable format. Perfect if you want to start right now, wherever you are in the world.</p>
+            <!-- Replace GUMROAD_URL with your actual Gumroad product link -->
+            <a href="GUMROAD_URL" target="_blank" rel="noopener" class="btn btn--primary" style="justify-content:center;text-align:center;">Buy Ebook Instantly →</a>
+          </div>
+        </div>
+
+        <!-- COMING SOON: Course -->
+        <div class="product-card coming-soon reveal">
+          <div class="product-card__img-ph">[ Course Cover ]</div>
+          <div class="product-card__body">
+            <div class="product-card__tag">🎓 Online Course</div>
+            <div class="product-card__badge" style="background:rgba(100,100,100,0.1);border-color:rgba(255,255,255,0.1);color:var(--text-muted);">Coming Soon</div>
+            <h3 class="product-card__title">Dream Job &amp; Travel Life — Full Course</h3>
+            <div class="product-card__price" style="color:var(--text-muted);">TBA</div>
+            <p class="product-card__desc">A full video course expansion of the workbook — walking you through every step with our guidance, community, and accountability. Powered by Systeme.io.</p>
+            <a href="pages/early-access.html" class="btn btn--ghost" style="justify-content:center;text-align:center;">Join Waitlist →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Coming Soon</span>
+        <h2>More in the Works</h2>
+        <div class="divider" style="margin-left:0;"></div>
+        <p style="max-width:600px;color:var(--text-body);">We're building out more resources — merch, additional courses, and specialty programs. Get early access by joining our Insider Circle.</p>
+      </div>
+      <div class="shop-grid" style="margin-top:2rem;">
+        <div class="product-card coming-soon reveal">
+          <div class="product-card__img-ph">[ Merch Preview ]</div>
+          <div class="product-card__body">
+            <div class="product-card__tag">👕 Merch</div>
+            <div class="product-card__badge" style="background:rgba(100,100,100,0.1);border-color:rgba(255,255,255,0.1);color:var(--text-muted);">Coming Soon</div>
+            <h3 class="product-card__title">FCP Apparel &amp; Goods</h3>
+            <p class="product-card__desc">Live Limitless on your sleeve. FCP apparel, accessories, and gear — print on demand through Printful. Coming soon.</p>
+          </div>
+        </div>
+        <div class="product-card coming-soon reveal">
+          <div class="product-card__img-ph">[ Mentorship Preview ]</div>
+          <div class="product-card__body">
+            <div class="product-card__tag">🧘 Mentorship Packages</div>
+            <div class="product-card__badge" style="background:rgba(100,100,100,0.1);border-color:rgba(255,255,255,0.1);color:var(--text-muted);">Book via Calendly</div>
+            <h3 class="product-card__title">Private Mentorship with Jesse</h3>
+            <p class="product-card__desc">1:1 Conscious Fitness &amp; True Yoga mentorship. Start with a free clarity call to explore whether it's the right fit.</p>
+            <a href="yoga-mentorship.html" class="btn btn--outline" style="margin-top:auto;justify-content:center;text-align:center;">Learn More →</a>
+          </div>
+        </div>
+        <div class="product-card coming-soon reveal">
+          <div class="product-card__img-ph">[ Workshop Preview ]</div>
+          <div class="product-card__body">
+            <div class="product-card__tag">🔥 Workshops</div>
+            <div class="product-card__badge" style="background:rgba(100,100,100,0.1);border-color:rgba(255,255,255,0.1);color:var(--text-muted);">Book Directly</div>
+            <h3 class="product-card__title">Fire Arts &amp; Flow Arts Workshops</h3>
+            <p class="product-card__desc">In-person workshops available worldwide depending on where we are. Fill out a booking inquiry and we'll connect.</p>
+            <a href="fire-arts.html#book" class="btn btn--outline" style="margin-top:auto;justify-content:center;text-align:center;">Book Inquiry →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

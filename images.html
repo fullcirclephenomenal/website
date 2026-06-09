@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Guide — FCP Site (Internal Reference)</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    body { padding-top: 80px; }
+    .img-ref { background:var(--card-bg);border:1px solid rgba(255,255,255,0.06);padding:1.5rem;margin-bottom:1rem;border-left:3px solid var(--teal); }
+    .img-ref code { background:rgba(255,255,255,0.06);padding:2px 6px;font-size:0.8rem;color:var(--gold-light); }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Internal Reference</span>
+      <h1>Image Placement Guide</h1>
+      <div class="divider" style="margin-left:0;margin-top:1rem;"></div>
+      <p>This page is for your reference only — not linked publicly. Use it to track which images go where.</p>
+      <p style="margin-top:1rem;color:var(--gold-light);">To add an image, upload the file to the <code>images/</code> folder, then replace the placeholder text with an <code>&lt;img&gt;</code> tag as shown below.</p>
+
+      <div style="margin-top:2rem;">
+        <h3 style="font-family:var(--font-display);margin-bottom:1rem;">How to add an image</h3>
+        <div style="background:var(--midnight);padding:1.5rem;font-family:monospace;font-size:0.85rem;color:var(--gold-light);overflow-x:auto;">
+          <p style="color:var(--text-muted);margin-bottom:0.5rem;">/* Replace a placeholder div like this: */</p>
+          <p>&lt;div class="blog-card__img-ph"&gt;[ Athens Greece Photo ]&lt;/div&gt;</p>
+          <br>
+          <p style="color:var(--text-muted);margin-bottom:0.5rem;">/* With an actual img tag like this: */</p>
+          <p>&lt;img class="blog-card__img" src="../images/athens-blog-cover.jpg" alt="Athens Greece in winter" loading="lazy"&gt;</p>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <h3 style="font-family:var(--font-display);margin-bottom:1.5rem;">Image checklist by page</h3>
+
+        <div class="img-ref"><strong style="color:var(--white);">index.html — Home Hero</strong><br>Slot: <code>hero background (full screen)</code><br>Ideal: dramatic fire show or family travel photo — landscape orientation<br>File name suggestion: <code>images/hero-home.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/about.html — About Hero</strong><br>Slot: <code>right-side hero image</code><br>Ideal: Jesse & Catherine together — landscape<br>File name suggestion: <code>images/about-hero.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/about.html — Jesse Portrait</strong><br>Slot: <code>person-card Jesse</code><br>Ideal: Jesse portrait — 3:4 portrait orientation<br>File name suggestion: <code>images/jesse-portrait.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/about.html — Catherine Portrait</strong><br>Slot: <code>person-card Catherine</code><br>Ideal: Catherine portrait — 3:4 portrait orientation<br>File name suggestion: <code>images/catherine-portrait.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/about.html — Prana</strong><br>Slot: <code>prana photo 1:1</code><br>Ideal: Prana candid — square<br>File name suggestion: <code>images/prana.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/fire-arts.html — Fire Hero background</strong><br>Slot: <code>full section background ember zone</code><br>Ideal: fire performance action shot<br>File name suggestion: <code>images/fire-hero.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/yoga-mentorship.html — Jesse Yoga</strong><br>Slot: <code>hero side image</code><br>Ideal: Jesse in yoga/training setting<br>File name suggestion: <code>images/jesse-yoga.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/blog-travel.html — Post Covers</strong><br>Slot: <code>each blog-card__img-ph</code><br>Replace placeholder text with real post images<br>Example: <code>images/blog-athens.jpg</code>, <code>images/blog-egypt.jpg</code></div>
+
+        <div class="img-ref"><strong style="color:var(--white);">pages/blog-wellness.html — Post Covers</strong><br>Slot: <code>each blog-card__img-ph</code><br>Replace placeholder text with real post images<br>Example: <code>images/blog-fitness.jpg</code>, <code>images/blog-yoga.jpg</code></div>
+      </div>
+    </div>
+  </section>
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+</body>
+</html>

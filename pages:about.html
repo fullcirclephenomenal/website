@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Full Circle Phenomenal</title>
+  <meta name="description" content="Jesse and Catherine Hart — the story of six years, 30+ countries, and the first ever whole-world touring fire performers and yoga teachers.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .about-hero { position:relative; min-height:70vh; display:flex; align-items:center; background:var(--black); overflow:hidden; padding-top:var(--nav-height); }
+    .about-hero__bg { position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 30% 50%, rgba(201,147,58,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 80% 20%, rgba(61,184,160,0.06) 0%, transparent 60%), linear-gradient(160deg, #0a0a0e, #0c0e1a); }
+    .about-hero__img { position:absolute;right:0;top:0;bottom:0;width:50%;object-fit:cover;opacity:0.3;filter:saturate(0.6); }
+    .about-hero__img-placeholder { position:absolute;right:0;top:0;bottom:0;width:50%;background:linear-gradient(135deg,#0c0a12,#1a0c0a);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase; }
+    .about-hero__content { position:relative;z-index:2;max-width:600px; }
+    .about-hero__content h1 { animation:fadeUp 0.8s 0.2s both; }
+    .about-hero__content p { animation:fadeUp 0.8s 0.4s both; font-size:1.1rem; line-height:1.8; color:var(--text-body); }
+    .timeline { padding:var(--section-pad) 0; }
+    .timeline__inner { display:grid;grid-template-columns:1fr 3px 1fr;gap:0 3rem;position:relative; }
+    .timeline__line { background:linear-gradient(var(--gold), transparent); }
+    .timeline__item { padding-bottom:4rem; }
+    .timeline__item--right { grid-column:3; }
+    .timeline__item--left { grid-column:1; text-align:right; }
+    .timeline__dot { grid-column:2; display:flex;align-items:flex-start;justify-content:center;padding-top:0.4rem; }
+    .timeline__dot::before { content:'';width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--black);box-shadow:0 0 0 3px rgba(201,147,58,0.3);flex-shrink:0; }
+    .timeline__year { font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem; }
+    .timeline__title { font-family:var(--font-display);font-size:1.3rem;color:var(--white);margin-bottom:0.5rem; }
+    .timeline__text { font-size:0.85rem;color:var(--text-body);line-height:1.7; }
+    .meet-section { padding:var(--section-pad) 0;background:var(--deep-navy); }
+    .meet-grid { display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start; }
+    .person-card { }
+    .person-card__img-wrap { position:relative;margin-bottom:2rem; }
+    .person-card__img { width:100%;aspect-ratio:3/4;object-fit:cover;display:block; }
+    .person-card__img-ph { width:100%;aspect-ratio:3/4;background:var(--midnight);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.05); }
+    .person-card__name { font-family:var(--font-display);font-size:2rem;color:var(--white);margin-bottom:0.3rem; }
+    .person-card__role { font-size:0.68rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem; }
+    .yt-section { padding:var(--section-pad) 0; }
+    .yt-tabs { display:flex;gap:2px;margin-bottom:2rem; }
+    .yt-tab { padding:10px 20px;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;background:var(--dark-surface);color:var(--text-muted);cursor:pointer;border:none;transition:all var(--transition); }
+    .yt-tab.active { background:var(--gold);color:var(--black); }
+    .yt-tab:hover:not(.active) { background:var(--card-bg);color:var(--white); }
+    .yt-tab-content { display:none; }
+    .yt-tab-content.active { display:block; }
+    .yt-gallery { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem; }
+    .yt-placeholder { position:relative;padding-bottom:56.25%;background:var(--midnight);cursor:pointer;overflow:hidden; }
+    .yt-placeholder img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease,opacity 0.4s; }
+    .yt-placeholder:hover img { transform:scale(1.03);opacity:0.8; }
+    .yt-placeholder__play { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2; }
+    .yt-placeholder__play-btn { width:44px;height:44px;background:rgba(201,147,58,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s; }
+    .yt-placeholder:hover .yt-placeholder__play-btn { background:var(--gold-light);transform:scale(1.1); }
+    .yt-placeholder__play-btn::after { content:'';display:block;width:0;height:0;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent var(--black);margin-left:2px; }
+    .yt-placeholder__title { position:absolute;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(transparent,rgba(0,0,0,0.85));font-size:0.75rem;font-weight:600;color:var(--white);z-index:2; }
+    .prana-section { padding:var(--section-pad) 0;background:var(--dark-surface); }
+    .prana-inner { display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center; }
+    @media(max-width:900px) {
+      .timeline__inner { grid-template-columns:3px 1fr; }
+      .timeline__item--left { grid-column:2;text-align:left; }
+      .timeline__item--right { grid-column:2; }
+      .timeline__dot { grid-column:1; }
+      .meet-grid { grid-template-columns:1fr; }
+      .yt-gallery { grid-template-columns:1fr 1fr; }
+      .prana-inner { grid-template-columns:1fr; }
+    }
+    @media(max-width:600px) {
+      .yt-gallery { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="about-hero">
+    <div class="about-hero__bg"></div>
+    <div class="about-hero__img-placeholder">[ Hero Photo ]</div>
+    <div class="container">
+      <div class="about-hero__content">
+        <span class="eyebrow">Our Story</span>
+        <h1>A Life Without<br><em style="color:var(--gold-light);">Borders.</em></h1>
+        <p>We are Jesse and Catherine Hart — soul partners, performers, coaches, and nomadic visionaries from the United States. Six and a half years in. Thirty countries deep. One daughter born on the road. One mission: Unite The World First Hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">The Journey</span>
+        <h2>Six Years, One Road</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="timeline__inner" style="margin-top:3rem;">
+        <div class="timeline__item timeline__item--left reveal">
+          <div class="timeline__year">2019</div>
+          <div class="timeline__title">Oregon, USA → Mexico</div>
+          <div class="timeline__text">We load a camper truck and drive south out of Oregon. The plan: drive the whole world. What began as a bold dream becomes a living commitment.</div>
+        </div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__item timeline__item--right reveal">
+          <div class="timeline__year">2019–2021</div>
+          <div class="timeline__title">Central &amp; South America</div>
+          <div class="timeline__text">Guatemala, Honduras, Nicaragua, Costa Rica, Panama, Colombia, Ecuador, Peru, Brazil. Fire shows on beaches. Yoga on volcanoes. Community everywhere.</div>
+        </div>
+        <div class="timeline__item timeline__item--left reveal">
+          <div class="timeline__year">2021</div>
+          <div class="timeline__title">Prana Born in Ecuador 🌿</div>
+          <div class="timeline__text">Our daughter Prana is born in Ecuador — the first country she'll ever call home. She has never been to the United States. Every country has been her home.</div>
+        </div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__item timeline__item--right reveal">
+          <div class="timeline__year">2022–2023</div>
+          <div class="timeline__title">Shipped to Africa</div>
+          <div class="timeline__text">The truck crosses the Atlantic. We land in West Africa and begin driving north — Ghana, Senegal, Morocco. The continent opens itself to us in extraordinary ways.</div>
+        </div>
+        <div class="timeline__item timeline__item--left reveal">
+          <div class="timeline__year">2023–2024</div>
+          <div class="timeline__title">The Middle East</div>
+          <div class="timeline__text">Egypt, Jordan, Saudi Arabia, Oman, UAE. Fire at the pyramids. Yoga in Petra. Workshops across the Arabian Peninsula. Ancient worlds meet a living mission.</div>
+        </div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__item timeline__item--right reveal">
+          <div class="timeline__year">2024–Present</div>
+          <div class="timeline__title">Turkey, Greece &amp; Albania</div>
+          <div class="timeline__text">Eastern Europe opens a new chapter. Currently in Albania — our 30th country — continuing to teach, perform, and build the worldwide family.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="meet-section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">The Harts</span>
+        <h2>Meet Jesse &amp; Catherine</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="meet-grid" style="margin-top:3rem;">
+        <div class="person-card reveal">
+          <div class="person-card__img-wrap">
+            <div class="person-card__img-ph">[ Jesse Hart Photo ]</div>
+          </div>
+          <h3 class="person-card__name">Jesse Hart</h3>
+          <p class="person-card__role">Fire Artist · Yoga &amp; Mentorship · Visionary</p>
+          <p>Jesse has been exploring the intersection of physical mastery, consciousness, and lifestyle design since 2012. He is the founder of Conscious Fitness and True Yoga — a system blending yogic philosophy, movement science, mindset, and manifestation.</p>
+          <p>With 13+ years of teaching and 175+ five-star client reviews, Jesse works with a small number of private mentorship clients at any given time. His philosophy: the best version of you is already real — we're just closing the gap.</p>
+          <p style="margin-top:1rem;"><a href="yoga-mentorship.html" class="btn btn--outline" style="padding:10px 24px;font-size:0.68rem;">Work With Jesse →</a></p>
+        </div>
+        <div class="person-card reveal">
+          <div class="person-card__img-wrap">
+            <div class="person-card__img-ph">[ Catherine Hart Photo ]</div>
+          </div>
+          <h3 class="person-card__name">Catherine Hart</h3>
+          <p class="person-card__role">Yoga Teacher · Fire Artist · Travel Blogger · Creator</p>
+          <p>Catherine is a yoga teacher, fire performer, belly dancer, and the heart of Full Circle Phenomenal's creative and community presence. She co-teaches, co-performs, and co-authors everything this brand puts into the world.</p>
+          <p>As a mother, teacher, and creator living fully on the road, Catherine brings grounded feminine wisdom and adventurous spirit to every offering — from workshops in jungle retreats to flow arts on ancient ruins.</p>
+          <p style="margin-top:1rem;"><a href="blog-travel.html" class="btn btn--outline" style="padding:10px 24px;font-size:0.68rem;">Read Her Stories →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prana-section">
+    <div class="container">
+      <div class="prana-inner">
+        <div class="reveal">
+          <div style="width:100%;aspect-ratio:1;background:var(--midnight);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.05);">[ Prana Photo ]</div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">The Youngest Nomad</span>
+          <h2>Prana</h2>
+          <div class="divider" style="margin-left:0;"></div>
+          <p style="font-family:var(--font-display);font-size:1.2rem;font-style:italic;color:var(--gold-light);line-height:1.6;">"She has never been to our home country, for each country has become home in a way."</p>
+          <p style="margin-top:1.5rem;">Born in Ecuador in 2021, Prana is our daughter and the youngest global citizen we know. She has crossed oceans on ships, driven through deserts, danced at festivals in West Africa, and played in the ancient world of the Middle East.</p>
+          <p>She is the living proof of what this journey is really about — that children can grow up in the whole world as their classroom, that home is a feeling you carry, not a place you're from.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="yt-section section--dark section">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Watch</span>
+        <h2>See It All Unfold</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="yt-tabs reveal">
+        <button class="yt-tab active" onclick="switchTab('yoga')">Yoga &amp; Wellness</button>
+        <button class="yt-tab" onclick="switchTab('fire')">Fire Arts</button>
+        <button class="yt-tab" onclick="switchTab('travel')">World Tour</button>
+      </div>
+      <div class="yt-tab-content active" id="tab-yoga">
+        <div class="yt-gallery">
+          <div class="yt-placeholder" data-ytid="8NnG96teJ7g"><img src="https://i.ytimg.com/vi/8NnG96teJ7g/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Spinal Warmup at the Great Pyramids</div></div>
+          <div class="yt-placeholder" data-ytid="8NnG96teJ7g"><img src="https://i.ytimg.com/vi/8NnG96teJ7g/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Beginners Seated Yoga — All Levels</div></div>
+          <div class="yt-placeholder" data-ytid="8NnG96teJ7g"><img src="https://i.ytimg.com/vi/8NnG96teJ7g/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">30-Min Standing Yoga &amp; QiGong</div></div>
+        </div>
+      </div>
+      <div class="yt-tab-content" id="tab-fire">
+        <div class="yt-gallery">
+          <div class="yt-placeholder" data-ytid="KN6RSXjJTqY"><img src="https://i.ytimg.com/vi/KN6RSXjJTqY/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Pharaoh's Fire — Great Pyramids</div></div>
+          <div class="yt-placeholder" data-ytid="KN6RSXjJTqY"><img src="https://i.ytimg.com/vi/KN6RSXjJTqY/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Fire Spinning Performance</div></div>
+          <div class="yt-placeholder" data-ytid="KN6RSXjJTqY"><img src="https://i.ytimg.com/vi/KN6RSXjJTqY/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Introducing Full Circle Phenomenal</div></div>
+        </div>
+      </div>
+      <div class="yt-tab-content" id="tab-travel">
+        <div class="yt-gallery">
+          <div class="yt-placeholder" data-ytid="2KdUiwWVeMk"><img src="https://i.ytimg.com/vi/2KdUiwWVeMk/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Middle East World Tour</div></div>
+          <div class="yt-placeholder" data-ytid="2KdUiwWVeMk"><img src="https://i.ytimg.com/vi/2KdUiwWVeMk/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">Overlanding from America to Albania</div></div>
+          <div class="yt-placeholder" data-ytid="2KdUiwWVeMk"><img src="https://i.ytimg.com/vi/2KdUiwWVeMk/maxresdefault.jpg" alt="" loading="lazy"><div class="yt-placeholder__play"><div class="yt-placeholder__play-btn"></div></div><div class="yt-placeholder__title">6-Year World Tour Update</div></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="btn btn--outline">50+ Free Yoga Classes + 250+ Fire Tutorials →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--deep-navy);text-align:center;">
+    <div class="container container--narrow reveal">
+      <span class="eyebrow">Get Involved</span>
+      <h2>You Are Part of This</h2>
+      <div class="divider"></div>
+      <p>This is more than our journey — it's yours too. Support the mission as a Patron, join our Insider Circle newsletter, or reach out to book us for your event.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+        <a href="https://www.patreon.com/c/unitetheworldfirsthand" target="_blank" rel="noopener" class="btn btn--primary">Support on Patreon</a>
+        <a href="fire-arts.html" class="btn btn--outline">Book a Fire Show</a>
+        <a href="yoga-mentorship.html" class="btn btn--ghost">1:1 Mentorship</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+  <script>
+    function switchTab(id) {
+      document.querySelectorAll('.yt-tab,.yt-tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.yt-tab').forEach((t,i) => { if(['yoga','fire','travel'][i]===id) t.classList.add('active'); });
+      document.getElementById('tab-'+id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
