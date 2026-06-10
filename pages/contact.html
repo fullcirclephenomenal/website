@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Full Circle Phenomenal</title>
+  <meta name="description" content="Get in touch with Jesse & Catherine Hart. Book a fire show, ask about mentorship, or just say hello from wherever you are in the world.">
+  <link rel="icon" href="https://full-circle-phenomenal.com/wp-content/uploads/2024/10/cropped-photo-output-270x270.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@200;300;400;600;700&display=swap">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .contact-hero {
+      position: relative;
+      padding-top: calc(var(--nav-height) + 60px);
+      padding-bottom: 60px;
+      background: var(--deep-navy);
+      overflow: hidden;
+      text-align: center;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(201,147,58,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Direct contact links */
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .contact-link-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-link-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .contact-link-card--email::after   { background: var(--gold); }
+    .contact-link-card--whatsapp::after { background: #25D366; }
+    .contact-link-card--instagram::after { background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366); }
+    .contact-link-card--youtube::after  { background: #FF0000; }
+    .contact-link-card--patreon::after  { background: #FF424D; }
+    .contact-link-card--facebook::after { background: #1877F2; }
+    .contact-link-card:hover { transform: translateY(-4px); border-color: rgba(201,147,58,0.25); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .contact-link-card:hover::after { transform: scaleX(1); }
+    .contact-link-card__icon { font-size: 2.2rem; }
+    .contact-link-card__platform {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .contact-link-card__handle {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .contact-link-card__cta {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: auto;
+    }
+
+    /* Two-column layout below */
+    .contact-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      padding: var(--section-pad) 0;
+    }
+
+    /* MailerLite override styles to blend with dark theme */
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper {
+      background-color: var(--card-bg) !important;
+      border: 1px solid rgba(201,147,58,0.2) !important;
+      border-radius: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer {
+      width: 100% !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4 {
+      color: var(--white) !important;
+      font-family: var(--font-display) !important;
+      font-size: 1.5rem !important;
+      font-weight: 400 !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p {
+      color: var(--text-body) !important;
+      font-family: var(--font-body) !important;
+      font-size: 0.85rem !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+      background-color: rgba(255,255,255,0.06) !important;
+      border-color: rgba(255,255,255,0.12) !important;
+      color: var(--white) !important;
+      border-radius: 0 !important;
+      font-family: var(--font-body) !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder { color: var(--text-muted) !important; }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+      background: linear-gradient(135deg, var(--gold), var(--amber)) !important;
+      color: var(--black) !important;
+      border-radius: 0 !important;
+      font-family: var(--font-body) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.15em !important;
+      text-transform: uppercase !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description {
+      color: var(--text-body) !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+      color: var(--white) !important;
+      font-family: var(--font-display) !important;
+    }
+    #mlb2-28581812.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+      color: var(--text-body) !important;
+    }
+
+    @media (max-width: 900px) {
+      .contact-links { grid-template-columns: repeat(2, 1fr); }
+      .contact-body { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 500px) {
+      .contact-links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <section class="contact-hero">
+    <div class="container container--narrow" style="position:relative;z-index:2;">
+      <span class="eyebrow">Get In Touch</span>
+      <h1>Say <em style="color:var(--gold-light);">Hello.</em></h1>
+      <div class="divider"></div>
+      <p style="max-width:520px;margin:0 auto;color:var(--text-body);">We are somewhere in the world right now — and we would love to hear from you. Whether you want to book a show, start mentorship, collaborate, or just connect — reach out.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--black);">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Find Us</span>
+        <h2>Every Way to Reach Us</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="contact-links">
+
+        <a href="mailto:info@full-circle-phenomenal.com" class="contact-link-card contact-link-card--email reveal">
+          <div class="contact-link-card__icon">✉️</div>
+          <div class="contact-link-card__platform">Email</div>
+          <div class="contact-link-card__handle">info@full-circle-phenomenal.com</div>
+          <div class="contact-link-card__cta">Send an Email →</div>
+        </a>
+
+        <a href="https://wa.me/13606010826" target="_blank" rel="noopener" class="contact-link-card contact-link-card--whatsapp reveal">
+          <div class="contact-link-card__icon">💬</div>
+          <div class="contact-link-card__platform">WhatsApp</div>
+          <div class="contact-link-card__handle">+1 360 601 0826</div>
+          <div class="contact-link-card__cta">Message on WhatsApp →</div>
+        </a>
+
+        <a href="https://instagram.com/fullcirclephenomenal" target="_blank" rel="noopener" class="contact-link-card contact-link-card--instagram reveal">
+          <div class="contact-link-card__icon">📸</div>
+          <div class="contact-link-card__platform">Instagram</div>
+          <div class="contact-link-card__handle">@fullcirclephenomenal</div>
+          <div class="contact-link-card__cta">Follow & DM →</div>
+        </a>
+
+        <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" class="contact-link-card contact-link-card--youtube reveal">
+          <div class="contact-link-card__icon">▶️</div>
+          <div class="contact-link-card__platform">YouTube</div>
+          <div class="contact-link-card__handle">Full Circle Phenomenal</div>
+          <div class="contact-link-card__cta">Subscribe →</div>
+        </a>
+
+        <a href="https://www.patreon.com/c/unitetheworldfirsthand" target="_blank" rel="noopener" class="contact-link-card contact-link-card--patreon reveal">
+          <div class="contact-link-card__icon">❤️</div>
+          <div class="contact-link-card__platform">Patreon</div>
+          <div class="contact-link-card__handle">Unite The World First Hand</div>
+          <div class="contact-link-card__cta">Become a Patron →</div>
+        </a>
+
+        <a href="https://facebook.com/jesse.hart2" target="_blank" rel="noopener" class="contact-link-card contact-link-card--facebook reveal">
+          <div class="contact-link-card__icon">👥</div>
+          <div class="contact-link-card__platform">Facebook</div>
+          <div class="contact-link-card__handle">Jesse Hart</div>
+          <div class="contact-link-card__cta">Connect →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--deep-navy);">
+    <div class="container">
+      <div class="contact-body">
+
+        <div class="reveal">
+          <span class="eyebrow">Join the List</span>
+          <h2>Stay Connected</h2>
+          <div class="divider" style="margin-left:0;"></div>
+          <p>The best way to stay in the loop is our Insider Circle newsletter — early access to videos and blogs, behind-the-scenes from the road, and occasional freebies. Choose your interests below.</p>
+          <div style="margin-top:2rem;padding:1.5rem;background:var(--card-bg);border-left:3px solid var(--teal);">
+            <p style="font-size:0.85rem;color:var(--text-body);margin:0;"><strong style="color:var(--white);">For bookings & business</strong><br>Email us directly at <a href="mailto:info@full-circle-phenomenal.com" style="color:var(--gold-light);">info@full-circle-phenomenal.com</a> or message on WhatsApp. We respond within 48 hours.</p>
+          </div>
+          <div style="margin-top:1rem;padding:1.5rem;background:var(--card-bg);border-left:3px solid var(--gold);">
+            <p style="font-size:0.85rem;color:var(--text-body);margin:0;"><strong style="color:var(--white);">For mentorship</strong><br>The best first step is a free clarity call. <a href="yoga-mentorship.html" style="color:var(--gold-light);">Book directly on the Yoga & Mentorship page →</a></p>
+          </div>
+          <div style="margin-top:1rem;padding:1.5rem;background:var(--card-bg);border-left:3px solid var(--amber);">
+            <p style="font-size:0.85rem;color:var(--text-body);margin:0;"><strong style="color:var(--white);">For fire show bookings</strong><br>Fill out the inquiry form on the <a href="fire-arts.html" style="color:var(--gold-light);">Fire Arts page →</a> with your event details.</p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <!-- MAILERLITE EMBED -->
+          <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1755079");</style>
+          <style type="text/css">
+          .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}.ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#ffffff #ffffff #ffffff transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}@keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+          </style>
+          <div id="mlb2-28581812" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28581812">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>Join the Insider Circle!</h4>
+                    <p>Get early access to our blogs, vlogs, behind the scenes stories, special offers, and freebies every week. &lt;3</p>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1649611/forms/160335326379771736/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-interestGroupsRow ml-block-groups ml-validate-required">
+                      <div class="ml-form-interestGroupsRowCheckbox group">
+                        <label><input type="checkbox" name="groups[]" value="159369200800892215"><div class="label-description">Travel</div></label>
+                      </div>
+                      <div class="ml-form-interestGroupsRowCheckbox group">
+                        <label><input type="checkbox" name="groups[]" value="159369209501976536"><div class="label-description">Flow Arts</div></label>
+                      </div>
+                      <div class="ml-form-interestGroupsRowCheckbox last-group">
+                        <label><input type="checkbox" name="groups[]" value="159369258617276241"><div class="label-description">Yoga</div></label>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">Subscribe</button>
+                      <button disabled="disabled" style="display:none;" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display:none;">
+                  <div class="ml-form-successContent">
+                    <h4>You're in!</h4>
+                    <p>You have successfully joined. <strong>Check your email inbox.</strong></p>
+                    <p>If you don't see anything in the next five minutes, check your folders "Promotions" and/or "Spam".</p>
+                    <p>We're so glad you're here. ♥</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            function ml_webform_success_28581812(){var $=ml_jQuery||jQuery;$('.ml-subscribe-form-28581812 .row-success').show();$('.ml-subscribe-form-28581812 .row-form').hide();}
+          </script>
+          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+          <script>fetch("https://assets.mailerlite.com/jsonp/1649611/forms/160335326379771736/takel")</script>
+          <!-- END MAILERLITE EMBED -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-inject"></div>
+  <script src="../js/components.js"></script>
+</body>
+</html>
