@@ -1,122 +1,61 @@
 /* ============================================================
-   FULL CIRCLE PHENOMENAL — Shared Components
-   Inject nav + footer into every page
+   FULL CIRCLE PHENOMENAL â€” Shared Components v2
+   Updated nav includes Contact link
    ============================================================ */
 
-const NAV_HTML = `
+document.addEventListener('DOMContentLoaded', () => {
+
+  const isHome = document.documentElement.dataset.page === 'home';
+  const pre = isHome ? 'pages/' : '';
+  const root = isHome ? '' : '../';
+
+  // ---- Inject Nav ----
+  const navTarget = document.getElementById('nav-inject');
+  if (navTarget) {
+    navTarget.innerHTML = `
 <nav class="nav" id="main-nav">
-  <div class="container">
-    <div class="nav__inner">
-      <a href="../index.html" class="nav__logo">Full Circle <span>Phenomenal</span></a>
-      <ul class="nav__links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="mission.html">Mission</a></li>
-        <li><a href="fire-arts.html">Fire Arts</a></li>
-        <li><a href="yoga-mentorship.html">Yoga &amp; Mentorship</a></li>
-        <li class="nav__dropdown">
-          <a href="#">Blog ▾</a>
-          <div class="nav__dropdown-menu">
-            <a href="blog-travel.html">Travel</a>
-            <a href="blog-wellness.html">Yoga &amp; Wellness</a>
-          </div>
-        </li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-      <button class="nav__toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
+  <div class="container"><div class="nav__inner">
+    <a href="${root}index.html" class="nav__logo">Full Circle <span>Phenomenal</span></a>
+    <ul class="nav__links">
+      <li><a href="${root}index.html">Home</a></li>
+      <li><a href="${pre}about.html">About</a></li>
+      <li><a href="${pre}mission.html">Mission</a></li>
+      <li><a href="${pre}fire-arts.html">Fire Arts</a></li>
+      <li><a href="${pre}yoga-mentorship.html">Yoga &amp; Mentorship</a></li>
+      <li class="nav__dropdown"><a href="#">Blog â–¾</a>
+        <div class="nav__dropdown-menu">
+          <a href="${pre}blog-travel.html">Travel</a>
+          <a href="${pre}blog-wellness.html">Yoga &amp; Wellness</a>
+        </div>
+      </li>
+      <li><a href="${pre}shop.html">Shop</a></li>
+      <li><a href="${pre}support.html">Support</a></li>
+      <li><a href="${pre}contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div></div>
 </nav>
 <div class="nav__mobile">
-  <a href="../index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="mission.html">Mission</a>
-  <a href="fire-arts.html">Fire Arts</a>
-  <a href="yoga-mentorship.html">Yoga &amp; Mentorship</a>
-  <a href="blog-travel.html">Travel Blog</a>
-  <a href="blog-wellness.html">Wellness Blog</a>
-  <a href="shop.html">Shop</a>
-  <a href="support.html">Support</a>
+  <a href="${root}index.html">Home</a>
+  <a href="${pre}about.html">About</a>
+  <a href="${pre}mission.html">Mission</a>
+  <a href="${pre}fire-arts.html">Fire Arts</a>
+  <a href="${pre}yoga-mentorship.html">Yoga &amp; Mentorship</a>
+  <a href="${pre}blog-travel.html">Travel Blog</a>
+  <a href="${pre}blog-wellness.html">Wellness Blog</a>
+  <a href="${pre}shop.html">Shop</a>
+  <a href="${pre}support.html">Support</a>
+  <a href="${pre}contact.html">Contact</a>
 </div>`;
 
-const NAV_HOME_HTML = NAV_HTML
-  .replaceAll('../index.html', 'index.html')
-  .replaceAll('href="about.html"', 'href="pages/about.html"')
-  .replaceAll('href="mission.html"', 'href="pages/mission.html"')
-  .replaceAll('href="fire-arts.html"', 'href="pages/fire-arts.html"')
-  .replaceAll('href="yoga-mentorship.html"', 'href="pages/yoga-mentorship.html"')
-  .replaceAll('href="blog-travel.html"', 'href="pages/blog-travel.html"')
-  .replaceAll('href="blog-wellness.html"', 'href="pages/blog-wellness.html"')
-  .replaceAll('href="shop.html"', 'href="pages/shop.html"')
-  .replaceAll('href="support.html"', 'href="pages/support.html"');
-
-const FOOTER_HTML = `
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <a href="../index.html" class="footer__logo">Full Circle <span>Phenomenal</span></a>
-        <p class="footer__tagline">Live Limitless — The world's first whole-world touring team of yoga teachers and fire performers.</p>
-        <div class="footer__social">
-          <a href="https://instagram.com/fullcirclephenomenal" target="_blank" rel="noopener" title="Instagram">IG</a>
-          <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" title="YouTube">YT</a>
-          <a href="https://www.patreon.com/c/unitetheworldfirsthand" target="_blank" rel="noopener" title="Patreon">PT</a>
-          <a href="https://facebook.com/jesse.hart2" target="_blank" rel="noopener" title="Facebook">FB</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="mission.html">Our Mission</a></li>
-          <li><a href="support.html">Support the Tour</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="fire-arts.html">Fire Arts &amp; Shows</a></li>
-          <li><a href="yoga-mentorship.html">Yoga &amp; Mentorship</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="https://calendly.com/full-circle-phenomenal/30min" target="_blank" rel="noopener">Book a Call</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h5>Blog</h5>
-        <ul>
-          <li><a href="blog-travel.html">Travel Stories</a></li>
-          <li><a href="blog-wellness.html">Yoga &amp; Wellness</a></li>
-          <li><a href="early-access.html">Early Access</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2026 Full Circle Phenomenal — Jesse &amp; Catherine Hart</span>
-      <span style="color:var(--gold);font-family:var(--font-display);font-style:italic;">Live Limitless</span>
-    </div>
-  </div>
-</footer>`;
-
-// Auto-inject into page
-document.addEventListener('DOMContentLoaded', () => {
-  const navTarget = document.getElementById('nav-inject');
-  const footerTarget = document.getElementById('footer-inject');
-  const isHome = document.documentElement.dataset.page === 'home';
-
-  if (navTarget) {
-    navTarget.innerHTML = isHome ? NAV_HOME_HTML : NAV_HTML;
-    // Re-run nav scroll handler
+    // Nav scroll
     const nav = document.querySelector('.nav');
     if (nav) {
-      const handleScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      handleScroll();
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     }
-    // Re-run mobile toggle
+    // Mobile toggle
     const toggle = document.querySelector('.nav__toggle');
     const mobileNav = document.querySelector('.nav__mobile');
     if (toggle && mobileNav) {
@@ -133,20 +72,75 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
+    // Active link highlight
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav__links a, .nav__mobile a').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      const hrefFile = href.split('/').pop();
+      const pathFile = path.split('/').pop() || 'index.html';
+      if (hrefFile && hrefFile === pathFile) a.classList.add('active');
+    });
   }
 
+  // ---- Inject Footer ----
+  const footerTarget = document.getElementById('footer-inject');
   if (footerTarget) {
-    footerTarget.innerHTML = isHome
-      ? FOOTER_HTML.replaceAll('../index.html', 'index.html').replaceAll('href="about.html"', 'href="pages/about.html"').replaceAll('href="mission.html"', 'href="pages/mission.html"').replaceAll('href="fire-arts.html"', 'href="pages/fire-arts.html"').replaceAll('href="yoga-mentorship.html"', 'href="pages/yoga-mentorship.html"').replaceAll('href="blog-travel.html"', 'href="pages/blog-travel.html"').replaceAll('href="blog-wellness.html"', 'href="pages/blog-wellness.html"').replaceAll('href="shop.html"', 'href="pages/shop.html"').replaceAll('href="support.html"', 'href="pages/support.html"').replaceAll('href="early-access.html"', 'href="pages/early-access.html"')
-      : FOOTER_HTML;
+    footerTarget.innerHTML = `
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="${root}index.html" class="nav__logo" style="display:inline-block;margin-bottom:1rem;font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--white);">Full Circle <span style="color:var(--gold);">Phenomenal</span></a>
+        <p style="font-size:0.82rem;color:var(--text-muted);max-width:280px;margin-bottom:1.2rem;line-height:1.6;">Live Limitless â€” The world's first whole-world touring team of yoga teachers and fire performers.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/fullcirclephenomenal" target="_blank" rel="noopener" title="Instagram">IG</a>
+          <a href="https://youtube.com/fullcirclephenomenaljessehart" target="_blank" rel="noopener" title="YouTube">YT</a>
+          <a href="https://www.patreon.com/c/unitetheworldfirsthand" target="_blank" rel="noopener" title="Patreon">PT</a>
+          <a href="https://facebook.com/jesse.hart2" target="_blank" rel="noopener" title="Facebook">FB</a>
+          <a href="https://wa.me/13606010826" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="footer__col-title" style="font-family:var(--font-body);font-size:0.65rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">Explore</h5>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:0.6rem;"><a href="${pre}about.html" style="font-size:0.82rem;color:var(--text-muted);">About Us</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="${pre}mission.html" style="font-size:0.82rem;color:var(--text-muted);">Our Mission</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="${pre}support.html" style="font-size:0.82rem;color:var(--text-muted);">Support the Tour</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="${pre}contact.html" style="font-size:0.82rem;color:var(--text-muted);">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="font-family:var(--font-body);font-size:0.65rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">Services</h5>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:0.6rem;"><a href="${pre}fire-arts.html" style="font-size:0.82rem;color:var(--text-muted);">Fire Arts &amp; Shows</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="${pre}yoga-mentorship.html" style="font-size:0.82rem;color:var(--text-muted);">Yoga &amp; Mentorship</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="${pre}shop.html" style="font-size:0.82rem;color:var(--text-muted);">Shop</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="https://calendly.com/full-circle-phenomenal/30min" target="_blank" rel="noopener" style="font-size:0.82rem;color:var(--text-muted);">Book a Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="font-family:var(--font-body);font-size:0.65rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">Blog</h5>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:0.6rem;"><a href="${pre}blog-travel.html" style="font-size:0.82rem;color:var(--text-muted);">Travel Stories</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="${pre}blog-wellness.html" style="font-size:0.82rem;color:var(--text-muted);">Yoga &amp; Wellness</a></li>
+          <li style="margin-bottom:0.6rem;"><a href="${pre}early-access.html" style="font-size:0.82rem;color:var(--text-muted);">Early Access</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>Â© 2026 Full Circle Phenomenal â€” Jesse &amp; Catherine Hart</span>
+      <span style="color:var(--gold);font-family:var(--font-display);font-style:italic;">Live Limitless</span>
+    </div>
+  </div>
+</footer>`;
   }
 
-  // Scroll reveal — must run after inject
+  // ---- Scroll reveal ----
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => entry.target.classList.add('visible'), Number(delay));
+        const delay = Number(entry.target.dataset.delay) || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
         revealObserver.unobserve(entry.target);
       }
     });
@@ -157,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
-  // Ember particles
+  // ---- Ember particles ----
   document.querySelectorAll('.ember-zone').forEach(container => {
     for (let i = 0; i < 15; i++) {
       const e = document.createElement('div');
@@ -167,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // YT placeholder
+  // ---- YouTube click to embed ----
   document.querySelectorAll('.yt-placeholder').forEach(el => {
     el.addEventListener('click', () => {
       const id = el.dataset.ytid;
@@ -182,4 +176,5 @@ document.addEventListener('DOMContentLoaded', () => {
       el.appendChild(iframe);
     });
   });
+
 });
